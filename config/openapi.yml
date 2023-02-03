@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: RoDo Api
+  description: Backend API for the RoDo game
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: no@gmail.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: /api/v1
+tags:
+  - name: user
+    description: User APIs
+paths:
+  /user:
+    get:
+      description: Returns all the users
+      tags: 
+        - user
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+components:
+  schemas:
+    UserResponse:
+      oneOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              username:
+                type: string
+              team:
+                type: integer
