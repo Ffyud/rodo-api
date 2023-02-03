@@ -1,4 +1,3 @@
 node_modules
 .vscode/settings.json
-database.sqlite
-rodo-api.session.sql
+rodo-db.sqlite
