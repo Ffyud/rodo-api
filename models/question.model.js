@@ -6,8 +6,7 @@ const sequelize = new Sequelize({
 });
 
 const Question = sequelize.define('Question', {
-  content: DataTypes.STRING,
-  questionListId: DataTypes.INTEGER
+  content: DataTypes.STRING
 });
 
 export default Question;

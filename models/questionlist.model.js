@@ -1,4 +1,5 @@
 import { Sequelize, Model, DataTypes } from 'sequelize';
+import Question from './question.model.js';
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -6,9 +7,11 @@ const sequelize = new Sequelize({
 });
 
 const QuestionList = sequelize.define('QuestionList', {
-  name: DataTypes.STRING,
-  availableStartDate: DataTypes.DATETIME,
-  availableEndDate: DateType.DATETIME
+  name: DataTypes.STRING
+  // availableStartDate: DataTypes.DATETIME,
+  // availableEndDate: DateType.DATETIME
 });
+
+QuestionList.hasMany(Question)
 
 export default QuestionList;
