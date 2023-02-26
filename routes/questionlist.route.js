@@ -4,7 +4,7 @@ import QuestionList from "../models/questionlist.model.js";
 
 var questionlistRouter = express.Router();
 
-await QuestionList.sync({ force: true }); // bij starten steeds schone tabel maken
+await QuestionList.sync({ force: true }); // tijdelijk: bij starten steeds schone tabel maken
 
 questionlistRouter.post("/questionlist", async (req, res) => {
     const new_questionlist = QuestionList.build({
@@ -16,14 +16,12 @@ questionlistRouter.post("/questionlist", async (req, res) => {
 });
 
 questionlistRouter.get("/questionlist", async (req, res) => {
-    // alle vragenlijsten opvragen
     const all_questionlists = await QuestionList.findAll();
     res.status(200);
     res.send(all_questionlists);
 });
 
 questionlistRouter.get("/questionlist/:id", async (req, res) => {
-    // vragenlijst met id opvragen
     const questionlist = await QuestionList.findAll({
         where: {
             id: req.params.id
