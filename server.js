@@ -1,11 +1,15 @@
 import express from 'express';
 import cors from 'cors';
-import userRouter from './routes/user.route.js';
 import questionlistRouter from './routes/questionlist.route.js';
 import questionRouter from './routes/question.route.js';
 import teamRouter from './routes/team.route.js';
 import userRouter from './routes/user.route.js';
 
+
+process.on('uncaughtException', function (err) {
+  console.error(err);
+  console.log("Niet crashen aub. Annuleer je request effe...");
+});
 
 const app = express();
 const PORT = 8181;
