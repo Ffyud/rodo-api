@@ -7,7 +7,7 @@ const sequelize = new Sequelize({
 
 const User = sequelize.define('User', {
   username: DataTypes.STRING,
-  team: DataTypes.INTEGER
+  loginCode: DataTypes.STRING
 });
 
 export default User;
