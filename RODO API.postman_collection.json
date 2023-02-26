@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "dba0379f-9288-4e11-945b-6d18b1eba83d",
+		"name": "RODO API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"klaas\",\n    \"loginCode\": \"derp\",\n    \"teamId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8181/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/user/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "/question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/question",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"question"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/questionlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/questionlist",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"questionlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/questionlist with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/questionlist/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"questionlist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/questionlist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"eerste lijst\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8181/questionlist",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"questionlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Regent het ook?\",\n    \"questionlistId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8181/question",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"question"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "/team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/team",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/team with id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8181/team/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"team",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"team met naam\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8181/team",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"team"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
