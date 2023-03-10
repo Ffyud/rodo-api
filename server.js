@@ -1,5 +1,5 @@
 import express from 'express';
-import session from 'express-session';
+// import session from 'express-session';
 import cors from 'cors';
 import questionlistRouter from './routes/questionlist.route.js';
 import questionRouter from './routes/question.route.js';
@@ -23,7 +23,7 @@ app.use(cors(corsOptions)); //  Cross-Origin Resource Sharing (https://developer
 
 app.use(express.json()); // Header "content-type" : application/json
   
-app.use(session); // TODO session gebruiken voor authenticatie (https://github.com/expressjs/session)
+// app.use(session); // TODO session gebruiken voor authenticatie (https://github.com/expressjs/session)
 
 app.use('/', express.static('public'));
 
