@@ -1,0 +1,12 @@
+version: "3"
+services:
+    rodo-api:
+        container_name: rodo-api
+        build:
+            context: .
+            dockerfile: Dockerfile
+        # expose:
+        #     - "3000"
+        # expose alleen als we een db service gaan toevoegen
+        ports:
+            - "8181:8181"
