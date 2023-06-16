@@ -18,5 +18,6 @@ services:
         volumes:
         - ./certs:/etc/letsencrypt
         - ./certbot:/var/www/certbot
-        command: certbot renew --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN} --quiet --no-random-sleep-on-renew
+        command: certbot certonly --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN} --quiet
+        # command: certbot renew --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN} --quiet --no-random-sleep-on-renew
         entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;"
