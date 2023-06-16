@@ -21,5 +21,5 @@ services:
         volumes:
             - ./certs:/etc/letsencrypt:rw
             - ./certbot:/var/www/certbot:rw
-        command: certbot certonly --webroot --webroot-path=/var/www/certbot --email davidduyff@gmail.com --agree-tos --no-eff-email -d rodo-api.davidduyff.nl
+        command: certonly --webroot --webroot-path=/var/www/certbot --email davidduyff@gmail.com --agree-tos --no-eff-email -d rodo-api.davidduyff.nl
         # entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;"
