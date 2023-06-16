@@ -11,13 +11,14 @@ services:
         image: nginx:alpine
         ports:
             - 80:80
+            - 443:443
         volumes:
             - ./nginx.conf:/etc/nginx/nginx.conf:ro
             - ./certs:/etc/nginx/certs:ro
     certbot:
         image: certbot/certbot
         volumes:
-        - ./certs:/etc/letsencrypt
-        - ./certbot:/var/www/certbot
-        command: certbot certonly --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN} --quiet
+            - ./certs:/etc/letsencrypt
+            - ./certbot:/var/www/certbot
+        command: certbot certonly --webroot --webroot-path=/var/www/certbot --email davidduyff@gmail.com --agree-tos --no-eff-email -d rodo-api.davidduyff.nl --quiet
         entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;"
