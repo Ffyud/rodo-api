@@ -23,5 +23,6 @@ Start de rodo-api in een container:
 
 Mogelijk moet de nginx.conf aangepast en de Certbot container weg om dit lokaal te kunnen doen.
 Pas .env aan indien rodo-api op een domein met HTTPS moet draaien:
-<code>export DOMAIN=subdomain.yourdomain.com
-export EMAIL=your-email@example.com</code>
+
+<code>export DOMAIN=subdomain.yourdomain.com</code>
+<code>export EMAIL=email@example.com</code>
